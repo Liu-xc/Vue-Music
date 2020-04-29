@@ -1,10 +1,16 @@
 <template>
-  <div>Home</div>
+  <div>
+    <top-search></top-search>
+  </div>
 </template>
 
 <script>
+import TopSearch from 'comp/basic/TopSearch'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    TopSearch
+  }
 }
 </script>
 
