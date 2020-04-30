@@ -41,8 +41,9 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@import '~styles/var.styl'
+
 .swiper-pagination
   position absolute
-  width 100%
   bottom 0.3rem
 </style>
