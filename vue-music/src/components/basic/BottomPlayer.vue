@@ -37,6 +37,7 @@ export default {
   display flex
   justify-content space-between
   align-items center
+  color $bg-dark-blue
 
   .album-img
     width 1rem
