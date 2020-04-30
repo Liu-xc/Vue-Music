@@ -29,6 +29,7 @@ export default {
 @import '~styles/var.styl'
 
 .btm-player
+  height $bottom-height
   position fixed
   bottom 0
   width 100%

@@ -19,6 +19,7 @@ export default {
 @import '~styles/var.styl'
 
 .top-search
+  height $top-height
   position fixed
   width 100%
   padding 0.35rem 0.2rem
@@ -26,10 +27,10 @@ export default {
   display flex
   justify-content space-between
   align-items center
+  color $bg-dark-blue
 
   .top-title
     font-size 0.6rem
-    color $bg-dark-blue
 
   .search-btn
     flex 1
@@ -38,10 +39,14 @@ export default {
     border-radius 0.3rem
     text-align center
     margin 0 0.2rem
+    display flex
+    align-items center
+    justify-content center
 
     .search-text
-      font-size 0.4rem
+      font-size 0.33rem
       font-weight lighter
+      padding-left 0.1rem
 
     .icon-Group-
       color $bg-dark-blue
