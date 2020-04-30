@@ -68,6 +68,7 @@ export default {
   .rec-item
     display flex
     padding 0.1rem 0.2rem
+    background $bg-green-ll
 
     .disc-img
       width 1.4rem

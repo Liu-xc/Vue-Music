@@ -45,7 +45,7 @@ export default {
   right 0
   left 0
   overflow scroll
-  color $bg-white-l
+  color $bg-dark-blue-l
   font-size $font-size-medium-x
   padding 0.25rem 0.25rem
 
@@ -54,7 +54,7 @@ export default {
 
     .rank-item
       display flex
-      background $bg-dark-blue-ll
+      background $bg-green-ll
 
       .rank-img
         width 1.8rem
