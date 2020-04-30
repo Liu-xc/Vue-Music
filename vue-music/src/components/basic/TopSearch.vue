@@ -28,6 +28,7 @@ export default {
   justify-content space-between
   align-items center
   color $bg-dark-blue
+  z-index 100
 
   .top-title
     font-size 0.6rem

@@ -12,48 +12,6 @@
               <span class="disc-desc">适合学习或入睡听的歌单</span>
             </div>
           </li>
-          <li class="rec-item">
-            <img src="static/img/logo.png" class="disc-img" />
-            <div class="disc-info">
-              <span class="disc-name">纯音乐</span>
-              <span class="disc-desc">适合学习或入睡听的歌单</span>
-            </div>
-          </li>
-          <li class="rec-item">
-            <img src="static/img/logo.png" class="disc-img" />
-            <div class="disc-info">
-              <span class="disc-name">纯音乐</span>
-              <span class="disc-desc">适合学习或入睡听的歌单</span>
-            </div>
-          </li>
-          <li class="rec-item">
-            <img src="static/img/logo.png" class="disc-img" />
-            <div class="disc-info">
-              <span class="disc-name">纯音乐</span>
-              <span class="disc-desc">适合学习或入睡听的歌单</span>
-            </div>
-          </li>
-          <li class="rec-item">
-            <img src="static/img/logo.png" class="disc-img" />
-            <div class="disc-info">
-              <span class="disc-name">纯音乐</span>
-              <span class="disc-desc">适合学习或入睡听的歌单</span>
-            </div>
-          </li>
-          <li class="rec-item">
-            <img src="static/img/logo.png" class="disc-img" />
-            <div class="disc-info">
-              <span class="disc-name">纯音乐</span>
-              <span class="disc-desc">适合学习或入睡听的歌单</span>
-            </div>
-          </li>
-          <li class="rec-item">
-            <img src="static/img/logo.png" class="disc-img" />
-            <div class="disc-info">
-              <span class="disc-name">纯音乐</span>
-              <span class="disc-desc">适合学习或入睡听的歌单</span>
-            </div>
-          </li>
         </ul>
       </div>
     </list-scroll>
@@ -92,6 +50,12 @@ export default {
 
 .recommend
   background $bg-green-ll
+  position absolute
+  top $top-padding-height
+  bottom 0
+  right 0
+  left 0
+  overflow scroll
 
 .rec
   color $bg-dark-blue
