@@ -3,6 +3,14 @@
     <div class="album-img">
       <img :src="defaultImg" />
     </div>
+    <div class="song-info">
+      <span class="song-name">电台情歌</span>
+      <span class="singer">莫文蔚</span>
+    </div>
+    <div class="icons">
+      <span class="iconfont icon-bofang"></span>
+      <span class="iconfont icon-yinpinliebiao"></span>
+    </div>
   </div>
 </template>
 
@@ -24,7 +32,7 @@ export default {
   position fixed
   bottom 0
   width 100%
-  padding 0.35rem 0.2rem
+  padding 0.2rem 0.2rem
   background $bg-green
   display flex
   justify-content space-between
@@ -39,4 +47,25 @@ export default {
 
     img
       width 100%
+
+  .song-info
+    flex 1
+    display flex
+    flex-direction column
+    padding 0 0.3rem
+
+    .song-name
+      font-size $font-size-large
+      font-weight 600
+      padding-bottom 0.1rem
+
+    .singer
+      font-size $font-size-medium
+
+  .icons
+    .icon-bofang
+      font-size 0.9rem
+
+    .icon-yinpinliebiao
+      font-size 0.8rem
 </style>
