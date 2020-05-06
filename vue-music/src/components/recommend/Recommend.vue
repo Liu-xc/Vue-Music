@@ -49,13 +49,7 @@ export default {
   padding 0.2rem 0
 
 .recommend
-  background $bg-green-ll
-  position absolute
-  top $top-padding-height
-  bottom 0
-  right 0
-  left 0
-  overflow scroll
+  container()
 
 .rec
   color $bg-dark-blue

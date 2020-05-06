@@ -31,13 +31,7 @@ export default {
 @import '~styles/var.styl'
 
 .singers
-  position absolute
-  top $top-padding-height
-  left 0
-  right 0
-  bottom 0
-  overflow scroll
-  background $bg-green-ll
+  container()
   color $bg-dark-blue-l
 
   .class-list

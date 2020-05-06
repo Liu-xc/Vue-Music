@@ -38,14 +38,7 @@ export default {
 @import '~styles/var.styl'
 
 .rank
-  background $bg-green-ll
-  position absolute
-  top $top-padding-height
-  bottom 0
-  right 0
-  left 0
-  overflow scroll
-  color $bg-dark-blue-l
+  container()
   font-size $font-size-medium-x
   padding 0.25rem 0.25rem
 

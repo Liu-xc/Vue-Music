@@ -1,7 +1,7 @@
 <template>
   <div class="top-search">
     <span class="top-title">Music</span>
-    <div class="search-btn">
+    <div class="search-btn" @click.stop="handleSearchClick">
       <span class="iconfont icon-Group-"></span>
       <span class="search-text">搜索</span>
     </div>
@@ -11,7 +11,12 @@
 
 <script>
 export default {
-  name: 'TopSearch'
+  name: 'TopSearch',
+  methods: {
+    handleSearchClick () {
+      this.$router.push('/search')
+    }
+  }
 }
 </script>
 
