@@ -6,13 +6,11 @@
     <div class="home-container">
       <router-view></router-view>
     </div>
-    <bottom-player></bottom-player>
   </div>
 </template>
 
 <script>
 import TopSearch from 'comp/basic/TopSearch'
-import BottomPlayer from 'comp/basic/BottomPlayer'
 import SwitchTags from 'comp/basic/SwitchTags'
 // import jsonp from '@/common/jsonp.js'
 
@@ -20,7 +18,6 @@ export default {
   name: 'Home',
   components: {
     TopSearch,
-    BottomPlayer,
     SwitchTags
   }
   // ,

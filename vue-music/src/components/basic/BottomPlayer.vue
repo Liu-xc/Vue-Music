@@ -9,7 +9,7 @@
     </div>
     <div class="icons">
       <span class="iconfont icon-bofang"></span>
-      <span class="iconfont icon-yinpinliebiao"></span>
+      <span class="iconfont icon-yinpinliebiao" @click.stop="handlePlayListClick"></span>
     </div>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
   data () {
     return {
       defaultImg: 'static/img/logo.png'
+    }
+  },
+  methods: {
+    handlePlayListClick () {
+      this.$store.commit('togglePalyList')
     }
   }
 }
