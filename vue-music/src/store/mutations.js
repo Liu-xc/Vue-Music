@@ -4,5 +4,8 @@ export default {
   },
   toggleBottomPlayer (state) {
     state.bottomPlayer = !state.bottomPlayer
+  },
+  changePalyMode (state) {
+    state.playMode = state.playMode + 1 > 2 ? 0 : state.playMode + 1
   }
 }
