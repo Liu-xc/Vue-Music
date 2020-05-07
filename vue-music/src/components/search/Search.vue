@@ -2,7 +2,7 @@
   <div>
     <div class="top-search">
       <span class="iconfont icon-fanhui" @click.stop="handleBackClick"></span>
-      <span class="top-title">Search Music</span>
+      <div class="top-title">Search Music</div>
     </div>
     <div class="search">
       <div class="search-input">
@@ -42,7 +42,7 @@ export default {
 
 .search
   full-screen-container()
-  top $top-height - 24px
+  top $top-height - 28px
 
   .search-input
     position fixed
@@ -82,24 +82,22 @@ export default {
           color $bg-dark-blue
 
 .top-search
-  height $top-height - 24px
   position fixed
   width 100%
-  padding 0.35rem 0.2rem
+  padding 0.2rem 0.2rem
   background $bg-green
-  display flex
   justify-content center
   align-items center
   color $bg-dark-blue
   z-index 100
 
   .icon-fanhui
+    position absolute
     font-size $font-size-medium-x
     color $bg-dark-blue
     padding-left 0.12rem
 
   .top-title
-    flex 1
     font-size $font-size-large-x
     text-align center
 </style>

@@ -5,6 +5,7 @@ import Recommend from 'comp/recommend/Recommend'
 import Rank from 'comp/rank/Rank'
 import Singers from 'comp/singers/Singers'
 import Search from 'comp/search/Search'
+import Play from 'comp/play/Play'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/play',
+      name: 'Play',
+      component: Play
     }
   ]
 })

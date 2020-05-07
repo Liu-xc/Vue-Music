@@ -1,5 +1,5 @@
 <template>
-  <div class="btm-player">
+  <div class="btm-player" @click.stop="handlePlayerClick">
     <div class="album-img">
       <img :src="defaultImg" />
     </div>
@@ -42,7 +42,9 @@ export default {
     },
     handleToggleState () {
       this.togglePlayState()
-      console.log(this.playState)
+    },
+    handlePlayerClick () {
+      this.$router.push('/play')
     }
   }
 }
