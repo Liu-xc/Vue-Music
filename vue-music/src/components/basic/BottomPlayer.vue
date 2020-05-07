@@ -8,13 +8,14 @@
       <span class="singer">莫文蔚</span>
     </div>
     <div class="icons">
-      <span class="iconfont icon-bofang"></span>
+      <span class="iconfont" :class="playIcon" @click.stop="handleToggleState"></span>
       <span class="iconfont icon-yinpinliebiao" @click.stop="handlePlayListClick"></span>
     </div>
   </div>
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex'
 export default {
   name: 'BottomPlayer',
   data () {
@@ -22,9 +23,26 @@ export default {
       defaultImg: 'static/img/logo.png'
     }
   },
+  computed: {
+    ...mapGetters([
+      'playState'
+    ]),
+    playIcon () {
+      const icon = this.playState ? 'icon-zanting' : 'icon-bofang'
+      return icon
+    }
+  },
   methods: {
+    ...mapMutations([
+      'togglePlayState',
+      'togglePlayList'
+    ]),
     handlePlayListClick () {
-      this.$store.commit('togglePalyList')
+      this.togglePlayyList()
+    },
+    handleToggleState () {
+      this.togglePlayState()
+      console.log(this.playState)
     }
   }
 }
@@ -71,7 +89,7 @@ export default {
       font-size $font-size-medium
 
   .icons
-    .icon-bofang
+    .icon-bofang, .icon-zanting
       font-size 0.9rem
 
     .icon-yinpinliebiao

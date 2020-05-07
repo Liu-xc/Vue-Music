@@ -58,10 +58,10 @@ export default {
       'delPlayList'
     ]),
     handleChangeMode () {
-      this.$store.commit('changePalyMode')
+      this.$store.commit('changePlayMode')
     },
     handleCancleClick () {
-      this.$store.commit('togglePalyList')
+      this.$store.commit('togglePlayList')
     },
     handleDelClick () {
       this.needComfirm = true

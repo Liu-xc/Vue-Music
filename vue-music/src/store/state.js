@@ -1,6 +1,7 @@
 export default {
   showPlayList: false,
   bottomPlayer: true,
+  playState: false,
   playList: [
     {
       songName: '晴天',
