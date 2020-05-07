@@ -12,7 +12,7 @@
       <span class="del-icon iconfont icon-lajitong" @click.stop="handleDelClick"></span>
     </div>
     <div class="list-body">
-      <ul class="list" v-if="playList === []">
+      <ul class="list" v-if="playList[0]">
         <li class="list-item" v-for="(item, index) of playList" :key="index">
           <div class="song-info">
             <span class="song-name">{{item.songName}}</span>
@@ -117,7 +117,7 @@ export default {
   .list-body
     background $bg-green-l
     max-height 5.5rem
-    min-height 2rem
+    min-height 3.5rem
     overflow scroll
 
     .no-list

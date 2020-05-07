@@ -18,13 +18,13 @@
         <div class="progree-bar"></div>
         <div class="controler">
           <div class="play-list-ctrl">
-            <span class="iconfont" :class="playModeIcon"></span>
+            <span class="iconfont" :class="playModeIcon" @click.stop="handleChangeMode"></span>
             <span class="iconfont icon-xin1"></span>
-            <span class="iconfont icon-yinpinliebiao"></span>
+            <span class="iconfont icon-yinpinliebiao" @click.stop="handlePlayListClick"></span>
           </div>
           <div class="play-ctrl">
             <span class="iconfont icon-shangyishou"></span>
-            <span class="iconfont" :class="playIcon"></span>
+            <span class="iconfont" :class="playIcon" @click.stop="handleToggleState"></span>
             <span class="iconfont icon-xiayishou"></span>
           </div>
         </div>
@@ -56,7 +56,8 @@ export default {
   computed: {
     ...mapGetters([
       'playMode',
-      'playState'
+      'playState',
+      'showPlayList'
     ]),
     playIcon () {
       return this.playState ? 'icon-zanting' : 'icon-bofang'
@@ -71,11 +72,25 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'toggleBottomPlayer'
+      'toggleBottomPlayer',
+      'togglePlayState',
+      'togglePlayList'
     ]),
     handleBackClick () {
+      if (this.showPlayList) {
+        this.togglePlayList()
+      }
       this.$router.back(-1)
       this.toggleBottomPlayer()
+    },
+    handlePlayListClick () {
+      this.togglePlayList()
+    },
+    handleToggleState () {
+      this.togglePlayState()
+    },
+    handleChangeMode () {
+      this.$store.commit('changePlayMode')
     }
   },
   mounted () {

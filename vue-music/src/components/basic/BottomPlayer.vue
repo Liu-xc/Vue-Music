@@ -25,7 +25,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'playState'
+      'playState',
+      'showPlayList'
     ]),
     playIcon () {
       const icon = this.playState ? 'icon-zanting' : 'icon-bofang'
@@ -38,12 +39,15 @@ export default {
       'togglePlayList'
     ]),
     handlePlayListClick () {
-      this.togglePlayyList()
+      this.togglePlayList()
     },
     handleToggleState () {
       this.togglePlayState()
     },
     handlePlayerClick () {
+      if (this.showPlayList) {
+        this.togglePlayList()
+      }
       this.$router.push('/play')
     }
   }
