@@ -44,7 +44,7 @@ export default {
   justify-content space-between
   align-items center
   color $bg-dark-blue
-  z-index 100
+  z-index 90
 
   .album-img
     width 1rem

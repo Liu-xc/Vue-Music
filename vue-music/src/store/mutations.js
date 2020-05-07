@@ -7,5 +7,8 @@ export default {
   },
   changePalyMode (state) {
     state.playMode = state.playMode + 1 > 2 ? 0 : state.playMode + 1
+  },
+  delPlayList (state) {
+    state.playList = []
   }
 }

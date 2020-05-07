@@ -9,10 +9,10 @@
         ></span>
         <span class="mode-desc">{{modeInfo.desc}}</span>
       </div>
-      <span class="del-icon iconfont icon-lajitong"></span>
+      <span class="del-icon iconfont icon-lajitong" @click.stop="handleDelClick"></span>
     </div>
     <div class="list-body">
-      <ul class="list">
+      <ul class="list" v-if="playList === []">
         <li class="list-item" v-for="(item, index) of playList" :key="index">
           <div class="song-info">
             <span class="song-name">{{item.songName}}</span>
@@ -21,16 +21,24 @@
           <span class="del-song iconfont icon-cha"></span>
         </li>
       </ul>
+      <div class="no-list" v-else>暂无播放歌曲</div>
     </div>
     <div class="list-bottom" @click.stop="handleCancleClick">取消</div>
+    <session-box v-if="needComfirm" @comfirmed="handleDeleteList" @cancle="handleDelCancle"></session-box>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { modeDesc } from '@/common/playmode.js'
+import SessionBox from 'comp/basic/SessionBox'
 export default {
   name: 'PlayList',
+  data () {
+    return {
+      needComfirm: false
+    }
+  },
   computed: {
     ...mapGetters([
       'showPlayList',
@@ -46,12 +54,28 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'delPlayList'
+    ]),
     handleChangeMode () {
       this.$store.commit('changePalyMode')
     },
     handleCancleClick () {
       this.$store.commit('togglePalyList')
+    },
+    handleDelClick () {
+      this.needComfirm = true
+    },
+    handleDeleteList () {
+      this.delPlayList()
+      this.needComfirm = false
+    },
+    handleDelCancle () {
+      this.needComfirm = false
     }
+  },
+  components: {
+    SessionBox
   }
 }
 </script>
@@ -65,6 +89,7 @@ export default {
   right 0
   left 0
   background $bg-white
+  color $bg-dark-blue
   opacity 1
   z-index 100
 
@@ -92,8 +117,15 @@ export default {
   .list-body
     background $bg-green-l
     max-height 5.5rem
-    min-height 3rem
+    min-height 2rem
     overflow scroll
+
+    .no-list
+      display flex
+      padding 0.5rem
+      justify-content center
+      align-items center
+      font-size $font-size-medium
 
     .list
       padding 0.02rem 0
@@ -123,7 +155,7 @@ export default {
     background $bg-green-l
     padding 0.3rem
     color $bg-dark-blue
-    font-size $font-size-large
+    font-size $font-size-medium-x
     text-align center
     box-shadow 0 -3px 10px $bg-green-l
 </style>
