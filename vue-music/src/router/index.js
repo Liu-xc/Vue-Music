@@ -6,6 +6,7 @@ import Rank from 'comp/rank/Rank'
 import Singers from 'comp/singers/Singers'
 import Search from 'comp/search/Search'
 import Play from 'comp/play/Play'
+import User from 'comp/user/User'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/play',
       name: 'Play',
       component: Play
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: User
     }
   ]
 })

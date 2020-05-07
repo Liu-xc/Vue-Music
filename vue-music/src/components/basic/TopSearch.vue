@@ -5,7 +5,7 @@
       <span class="iconfont icon-Group-"></span>
       <span class="search-text">搜索</span>
     </div>
-    <span class="iconfont icon-xiugaitouxiang"></span>
+    <span class="iconfont icon-xiugaitouxiang" @click.stop="handleUserClick"></span>
   </div>
 </template>
 
@@ -15,6 +15,9 @@ export default {
   methods: {
     handleSearchClick () {
       this.$router.push('/search')
+    },
+    handleUserClick () {
+      this.$router.push('/user')
     }
   }
 }
@@ -59,4 +62,6 @@ export default {
 
   .icon-xiugaitouxiang
     padding 0.1rem
+    font-size $icon-size-large-x
+    font-weight 600
 </style>
