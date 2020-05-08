@@ -5,14 +5,14 @@
       <div class="header-title">Vue Music</div>
     </div>
     <div class="list-tags">
-      <span class="tag">我喜欢的</span>
-      <span class="tag">最近听的</span>
+      <router-link tag="span" to="/user/我喜欢的" class="tag">我喜欢的</router-link>
+      <router-link tag="span" to="/user/最近听的" class="tag">最近听的</router-link>
     </div>
     <div class="random-play-all">
       <span class="iconfont icon-bofang"></span>
       <span>随机播放全部</span>
     </div>
-    <router-view></router-view>
+    <router-view class="router-view"></router-view>
   </div>
 </template>
 
@@ -33,6 +33,9 @@ export default {
 .user
   full-screen-container()
   color $bg-dark-blue
+  display flex
+  flex-direction column
+  padding-bottom $bottom-height
 
   .user-header
     padding 0.2rem 0
@@ -50,7 +53,7 @@ export default {
 
   .list-tags
     width 44%
-    margin 0.5rem auto 0.3rem
+    margin 0.3rem auto 0.3rem
     padding 0.2rem
     text-align center
     background $bg-green-ll
@@ -70,11 +73,17 @@ export default {
     background $bg-green-ll
     border-radius 0.4rem
     font-size $font-size-medium-x
-    padding 0.15rem 0.2rem
+    padding 0.1rem 0.2rem
     display flex
     align-items center
     justify-content center
 
     .iconfont
       font-size 26px
+
+  .router-view
+    flex 1
+    margin-top 0.2rem
+    padding 0 0.7rem
+    overflow scroll
 </style>

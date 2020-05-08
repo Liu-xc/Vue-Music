@@ -7,6 +7,8 @@ import Singers from 'comp/singers/Singers'
 import Search from 'comp/search/Search'
 import Play from 'comp/play/Play'
 import User from 'comp/user/User'
+import LikeList from 'comp/user/components/LikeList'
+import RecentList from 'comp/user/components/RecentList'
 
 Vue.use(Router)
 
@@ -44,7 +46,17 @@ export default new Router({
     {
       path: '/user',
       name: 'User',
-      component: User
+      component: User,
+      children: [
+        {
+          path: '/user/我喜欢的',
+          component: LikeList
+        },
+        {
+          path: '/user/最近听的',
+          component: RecentList
+        }
+      ]
     }
   ]
 })
