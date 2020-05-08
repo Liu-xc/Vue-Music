@@ -5,8 +5,8 @@
       <div class="header-title">Vue Music</div>
     </div>
     <div class="list-tags">
-      <router-link tag="span" to="/user/我喜欢的" class="tag">我喜欢的</router-link>
-      <router-link tag="span" to="/user/最近听的" class="tag">最近听的</router-link>
+      <router-link tag="span" to="/user/我喜欢的" class="tag" @click.stop="handleBackClick">我喜欢的</router-link>
+      <router-link tag="span" to="/user/最近听的" class="tag" @click.stop="handleBackClick">最近听的</router-link>
     </div>
     <div class="random-play-all">
       <span class="iconfont icon-bofang"></span>
