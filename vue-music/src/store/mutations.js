@@ -13,5 +13,8 @@ export default {
   },
   togglePlayState (state) {
     state.playState = !state.playState
+  },
+  changeHomeRouter (state, router) {
+    state.homeRouter = router
   }
 }

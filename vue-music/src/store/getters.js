@@ -7,3 +7,5 @@ export const bottomPlayer = state => state.bottomPlayer
 export const playMode = state => state.playMode
 
 export const playState = state => state.playState
+
+export const homeRouter = state => state.homeRouter

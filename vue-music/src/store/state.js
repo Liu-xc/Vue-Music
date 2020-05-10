@@ -12,5 +12,6 @@ export default {
       songSinger: '周杰伦'
     }
   ],
-  playMode: 0
+  playMode: 0,
+  homeRouter: '/推荐'
 }

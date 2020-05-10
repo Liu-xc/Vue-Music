@@ -12,6 +12,7 @@
 <script>
 import TopSearch from 'comp/basic/TopSearch'
 import SwitchTags from 'comp/basic/SwitchTags'
+import { mapGetters } from 'vuex'
 // import jsonp from '@/common/jsonp.js'
 
 export default {
@@ -19,25 +20,17 @@ export default {
   components: {
     TopSearch,
     SwitchTags
+  },
+  computed: {
+    ...mapGetters([
+      'homeRouter'
+    ])
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.$router.push(this.homeRouter)
+    })
   }
-  // ,
-  // mounted () {
-  //   jsonp('http://www.migu.cn/product/recommend', {
-  //     f: 'json',
-  //     pageSize: 50,
-  //     pageNo: 1,
-  //     contentType: 20,
-  //     picType: 11002
-  //   }, {
-  //     param: 'jsonpCallback'
-  //   }).then(
-  //     resolve => {
-  //       console.log(resolve.data)
-  //     },
-  //     reject => {
-  //       console.log('reject')
-  //     })
-  // }
 }
 </script>
 

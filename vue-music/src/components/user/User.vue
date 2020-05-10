@@ -17,11 +17,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'User',
+  computed: {
+    ...mapGetters([
+      'homeRouter'
+    ])
+  },
   methods: {
     handleBackClick () {
-      this.$router.back(-1)
+      this.$router.push(this.homeRouter)
     }
   }
 }

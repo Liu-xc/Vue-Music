@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'SwitchTags',
   data () {
@@ -13,10 +14,14 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'changeHomeRouter'
+    ]),
     handleSwitchClick (title) {
       this.$router.push({
         path: `/${title}`
       })
+      this.changeHomeRouter(`/${title}`)
     }
   }
 }
